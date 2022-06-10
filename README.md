@@ -1,39 +1,47 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# widget_tester_extension
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+[![pub package](https://img.shields.io/pub/v/widget_tester_extension.svg)](https://pub.dartlang.org/packages/widget_tester_extension)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Widget Tester Extension for Integration Test on Flutter
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- pumpUntilFound
+
+```dart
+final finderVerifyHelloText = find.text('Hello');
+await tester.pumpUntilFound(finderVerifyHelloText);
+```
+
+- delay
+
+```dart
+await tester.delay(milliseconds);
+```
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yaml
+dev_dependencies:
+  widget_tester_extension: ^0.0.1
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+- Import
 
 ```dart
-const like = 'sample';
+import 'package:widget_tester_extension/widget_tester_extension.dart';
 ```
 
-## Additional information
+- pumpUntilFound
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+await tester.pumpUntilFound(finder);
+```
+
+- delay
+
+```dart
+await tester.delay(500);
+```

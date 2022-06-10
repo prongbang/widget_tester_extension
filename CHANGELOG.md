@@ -1,3 +1,5 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Add Widget Tester Extension
+* Add method pumpUntilFound
+* Add method delay
