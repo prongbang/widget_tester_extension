@@ -6,12 +6,17 @@ extension WidgetTesterExtension on WidgetTester {
   Future<void> pumpUntilFound(
     Finder finder, {
     Duration timeout = const Duration(seconds: 60),
+    bool ignoreTimeoutException = false,
   }) async {
     bool timerFound = false;
     final timer = Timer(
       timeout,
       () {
-        throw TimeoutException("Pump until found has timed out.");
+        if (ignoreTimeoutException) {
+          timerFound = true;
+        } else {
+          throw TimeoutException("Pump until found has timed out.");
+        }
       },
     );
     while (timerFound != true) {
